@@ -1,0 +1,442 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width")
+		link(rel="shortcut icon", href="favicon.ico", type="image/x-icon")
+			
+		//IE
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		
+		//SEO
+		meta(name="description", content="Резюме Антона Немцева, Web-developer")
+		meta(name="keywords", content="Web-developer, Frontend, Резюме, Антон Немцев")
+		meta(name="author", content="Антон Немцев")
+
+		//fonts
+		link(rel="stylesheet", type="text/css", href="css/fonts.css")
+
+		//Modernizer
+		script(src="bower/modernizr/src/modernizr.js")
+
+		//styles
+		link(rel="stylesheet", type="text/css", href="bower/normalize-css/normalize.css")
+		link(rel="stylesheet", type="text/css", href="bower/animate.css/animate.min.css")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+		link(rel="stylesheet", type="text/css" href="css/main.css")
+		link(rel="stylesheet", type="text/css" href="css/media.css")
+		
+		//Title
+		title Сайт-резюме
+
+	body
+		wrapper.mainWrapper
+
+			.loader
+				.loader__inner
+			
+			header.mainHeader(data-parallax="scroll" 
+			data-image-src="img/bg.jpg" data-z-index="1")
+
+				button.mainHeader__menuButton.menuButton
+					.menuButton__sandwich#sandwich
+						.menuButton__top.menuButton__line
+						.menuButton__mid.menuButton__line
+						.menuButton__bot.menuButton__line
+
+				nav.mainMenu.hidden
+					ul.mainMenu__list
+						- var nav = {'about': 'Обо мне', 'resume': 'Резюме', 'portfolio': 'Портфолио', 'contacts': 'Контакты'}
+						each val, index in nav
+							li.mainMenu__item
+								a.mainMenu__link.animated.fadeInUp(href= '#' + index)= val
+
+				wrapper.mainHeader__top.top
+					wrapper.top__wrapper
+						wrapper.top__centered
+							.top__text
+								h1.top__text-head.animated.fadeInDown
+									| Антон Немцев
+								p.top__text-par.animated.fadeInUp
+									| Front-end Web-developer
+			
+			section.infoSection.aboutSection#about
+				header.infoSection__header
+					h2.infoSection__header-name.animated.fadeInUp
+						| Обо мне
+					wrapper.infoSection__header-wrapper
+						span.infoSection__header-descr.animated.fadeInUp
+							| Давайте познакомимся!
+				wrapper.infoSection__container
+					wrapper.aboutSection__flexbox.flexboxBlock
+						article.aboutSection__flexbox-block.aboutBlock.infoBlock
+							h3.infoBlock__header
+								| Немного о себе
+							p.aboutBlock__article.colored
+								| Активист, молодец и креативщик. Мой девиз "Я за любую движуху, кроме голодовки!". Постоянно стремлюсь попробовать что-то новое для себя, завести контакты с интересными людьми. От длительного сидения на месте быстро впадаю в депрессию и начинаю грустить. Поэтому стараюсь сидения на месте всячески избегать. 
+							p.aboutBlock__article
+								| Ближайшие мои цели в веб-разработке - начать работать в команде. Хочу быть в окружении людей со схожими интересами и перенимать их опыт, тем самым улучшая свои навыки. Стремлюсь к тому, чтобы делать интересные веб-странички на которых человек может просто "залипнуть" на некоторое время, потому что они необычные. Например, вот эта 
+								a.aboutBlock__article-link(href="http://matthew.wagerfield.com/parallax/", target="_blank") Красотаааа! 
+						article.aboutSection__flexbox-block.photoBlock.infoBlock
+							h3.infoBlock__header
+								| Фото
+							wrapper.photoBlock__wrapper
+								img.photoBlock__img(src="img/photo.jpg", alt="Фото")
+						article.aboutSection__flexbox-block.personalBlock.infoBlock
+							h3.infoBlock__header
+								| Персональная информация
+							h2.personalBlock__name
+								| Антон Немцев
+							ul.personalBlock__list
+								li.personalBlock__item
+									| Веб-разработчик и хороший человек
+								li.personalBlock__item
+									| День рождения: 30 января 1996 года
+								li.personalBlock__item
+									| Номер телефона:
+									a.personalBlock__item-link(href="tel:89117485349")
+										| +7(911)748-53-49
+								li.personalBlock__item
+									| E-mail:
+									a.personalBlock__item-link(href="mailto:doyoulikeorigami@gmail.com")
+										| doyoulikeorigami@gmail.com
+							ul.personalBlock__socials
+								li.personalBlock__socials-item
+									a.personalBlock__socials-link(href="https://github.com/DoYouLikeOrigami", target="_blank")
+										span.personalBlock__socials-icon.fa.fa-github
+								li.personalBlock__socials-item
+									a.personalBlock__socials-link(href="https://vk.com/origami_joke", target="_blank")
+										span.personalBlock__socials-icon.fa.fa-vk 
+								li.personalBlock__socials-item
+									a.personalBlock__socials-link(href="https://www.linkedin.com/in/origamijoke", target="_blank")
+										span.personalBlock__socials-icon.fa.fa-linkedin 
+
+			section.infoSection.resumeSection#resume
+				header.infoSection__header
+					h2.infoSection__header-name.animated.fadeInUp
+						| Мой опыт
+					wrapper.infoSection__header-wrapper
+						span.infoSection__header-descr.animated.fadeInUp
+							| Мои текущие достижения
+				wrapper.infoSection__container
+					wrapper.resumeSection__flexbox.flexboxBlock
+						article.resumeSection__flexbox-block.studyBlock.resumeBlock.left
+							h3.resumeBlock__header
+								| Где я учился
+							wrapper.resumeBlock__wrapper
+								span.resumeBlock__icon.fa.fa-graduation-cap
+							ul.resumeBlock__list
+								li.resumeBlock__item
+									span.resumeBlock__item-year
+										| С сентября 2014 года
+									.resumeBlock__item-descr.studyDescr
+										p.studyDescr__place
+											| Университет ИТМО 
+										p.studyDescr__skill
+											| Кафедра Информационных технологий
+										p.studyDescr__text
+											| Получил базовые навыки работы с html, css, js, php и Базами данных MySQL, а также опыт общения с людьми (преподавателями), которым я задолжал... 
+								li.resumeBlock__item
+									span.resumeBlock__item-year
+										| Январь-март 2015го года
+									.resumeBlock__item-descr.studyDescr
+										p.studyDescr__place
+											| HTML Academy 
+										p.studyDescr__skill
+											| Базовый и продвинутый курсы вёрстки
+										p.studyDescr__text
+											| Лучше познакомился с HTML и CSS, узнал о множестве секретов и тонкостей, научился работе с новейшими технологиями, такими как flex, анимации на css, вёрстка самых необычных элементов дизайна. Прекрасный курс!
+								li.resumeBlock__item
+									span.resumeBlock__item-year
+										| Сентябь-ноябрь 2015го года
+									.resumeBlock__item-descr.studyDescr
+										p.studyDescr__place
+											| Loftschool
+										p.studyDescr__skill
+											| Комплексное обучение веб-разработке
+										p.studyDescr__text
+											| Полное погржение в веб разработку на 3 месяца. Даже учёба в универе отошла на 2ой план. По 2 вебинара в неделю, на каждом из которых выдают тонну полезной информации и гора практики, после которой я стал не на словах а на деле веб-разработчиком.
+								li.resumeBlock__item
+									span.resumeBlock__item-year
+										| С августа 2015го
+									.resumeBlock__item-descr.studyDescr
+										p.studyDescr__place
+											| Личный опыт фрилансера
+										p.studyDescr__skill
+											| Разработка Landing-page на коде и CMS Wordpress
+										p.studyDescr__text
+											| Начал зарабатывать на любимом деле. Набиваю руку на практике и учусь общаться с заказчиками, выявлять их потребности, отговаривать от ненужных "фич" и выбивать из них деньги. Красота!  
+
+						article.resumeSection__flexbox-block.skillBlock.resumeBlock.center
+							h3.resumeBlock__header
+								| Чему научился
+							wrapper.resumeBlock__wrapper
+								span.resumeBlock__icon.fa.fa-thumbs-o-up
+							ul.resumeBlock__list
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Базовому набору 
+									p.skillDescr__text
+										| HTML5 + CSS3 + JS
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Навыкам здорового верстальщика
+									p.skillDescr__text
+										| JADE + SCSS + GULP + БЭМ
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Ставить библиотеки через консоль
+									p.skillDescr__text
+										| Bower + NPM
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Работать в команде
+									p.skillDescr__text
+										a.skillDescr__link(href="https://github.com/DoYouLikeOrigami/Loftschool-Teamwork", target="blank") Опыт тимлида 
+										| + 
+										a.skillDescr__link(href="https://github.com/DoYouLikeOrigami", target="blank") Git-разработка
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Общаться с людьми
+									p.skillDescr__text
+										| Как с заказчиками, так и с коллегами
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Гуглить
+									p.skillDescr__text
+										| И пользоваться ресурсом StackOvewflow
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-check-square-o.skillDescr__li
+										| Работать при свете луны
+									p.skillDescr__text
+										| Если делайн совсем близко
+
+						article.resumeSection__flexbox-block.skillBlock.resumeBlock.right
+							h3.resumeBlock__header
+								| Чему хочу научиться
+							wrapper.resumeBlock__wrapper
+								span.resumeBlock__icon.fa.fa-line-chart
+							ul.resumeBlock__list
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-fast-forward.skillDescr__li
+										| Взаимодействию с сервером
+									p.skillDescr__text
+										| JSON + ajax
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-fast-forward.skillDescr__li
+										| Углублённому JS
+									p.skillDescr__text
+										| На котором можно строить полноценные приложения
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-fast-forward.skillDescr__li
+										| Динамическим страницам
+									p.skillDescr__text
+										| Создавать большее взаимодействие с пользователем в виде игр, например
+								li.resumeBlock__item.skillDescr
+									p.skillDescr__name
+										span.fa.fa-fast-forward.skillDescr__li
+										| Подстройке под пользователя
+									p.skillDescr__text
+										| Определение его запросов и потребностей (поиск в Google, например) и показ того, что он хочет видеть
+			
+			section.infoSection.portfolioSection#portfolio
+				header.infoSection__header
+					h2.infoSection__header-name.animated.fadeInUp
+						| Моё портфолио
+					wrapper.infoSection__header-wrapper
+						span.infoSection__header-descr.animated.fadeInUp
+							| То, что показать не стыдно
+				wrapper.infoSection__container
+					wrapper.portfolioSection__flexbox.flexboxBlock
+
+						.portfolioSection__flexbox-block.portfolioItem
+							img.portfolioItem__img(src="img/portfolio/portfolio.jpg", alt="Сайт портфолио")
+							.portfolioItem__shadow
+							.portfolioItem__content
+								h3.portfolioItem__content-name
+									| Сайт портфолио
+								p.portfolioItem__content-descr
+									| Отработка базовых навыков вёрстки
+								a.portfolioItem__content-link(href="#", data-number="1")
+									| Посмотреть
+
+						.portfolioSection__flexbox-block.portfolioItem
+							img.portfolioItem__img(src="img/portfolio/watermark.jpg", alt="Изображение сайта")
+							.portfolioItem__shadow
+							.portfolioItem__content
+								h3.portfolioItem__content-name
+									| Приложение для создания водяных знаков
+								p.portfolioItem__content-descr
+									| Работа в команде на Github
+								a.portfolioItem__content-link(href="#", data-number="2")
+									| Посмотреть
+
+						.portfolioSection__flexbox-block.portfolioItem
+							img.portfolioItem__img(src="img/portfolio/9004010.jpg", alt="Магазин благоустройства")
+							.portfolioItem__shadow
+							.portfolioItem__content
+								h3.portfolioItem__content-name
+									| Благоустройство территории
+								p.portfolioItem__content-descr
+									| Первый серьзный заказ
+								a.portfolioItem__content-link(href="#", data-number="3")
+									| Посмотреть
+
+						.portfolioSection__flexbox-block.portfolioItem
+							img.portfolioItem__img(src="img/portfolio/master.jpg", alt="Сайт на Wordpress")
+							.portfolioItem__shadow
+							.portfolioItem__content
+								h3.portfolioItem__content-name
+									| Wordpress Landing
+								p.portfolioItem__content-descr
+									| Опыт работы с шаблоном Wordpress
+								a.portfolioItem__content-link(href="#", data-number="4")
+									| Посмотреть
+
+						.portfolioSection__flexbox-block.portfolioItem
+							img.portfolioItem__img(src="img/portfolio/shop.jpg", alt="Интернет магазин")
+							.portfolioItem__shadow
+							.portfolioItem__content
+								h3.portfolioItem__content-name
+									| Вёрстка страницы интернет-магазина
+								p.portfolioItem__content-descr
+									| Продвинутая вёрстка с исользованием технологий gulp, jade, sass и compass
+								a.portfolioItem__content-link(href="#", data-number="5")
+									| Посмотреть
+						
+			.portfolioItem__popup(data-number="1")
+				.portfolioPopup
+					header.portfolioPopup__header
+						h3.portfolioPopup__header-name
+							| Сайт-портфолио в рамках курса Loftschool
+						a.portfolioPopup__header-close.b-close
+							| x
+					p.portfolioPopup__descr
+						| Задание было ориентировано на отработку базовых навыков вёрстки. Одна из важных задач - корректное отображение на IE8.
+					a.portfolioPopup__link(href="https://github.com/DoYouLikeOrigami/HomeWork-1", target="_blank")
+						| Ссылка на github
+					.portfolioPopup__pic
+						img.portfolioPopup__pic-img(src="img/portfolio/portfolio.jpg", alt="Изображение проекта")
+
+			.portfolioItem__popup(data-number="2")
+				.portfolioPopup
+					header.portfolioPopup__header
+						h3.portfolioPopup__header-name
+							| Командная разработка приложения по созданию водяных знаков
+						a.portfolioPopup__header-close.b-close
+							| x
+					p.portfolioPopup__descr
+						| В команде из 4ёх человек (верстальщик + 2 JS + бэкенд на PHP) я был JS-разработчиком и тимлидом. Задание проходило в рамках курса Loftschool. Основная цель - рабочее приложение за 2 недели. Получил навыки управления и координации командой, а также не очень сложного JS.
+					a.portfolioPopup__link(href="https://github.com/DoYouLikeOrigami/Loftschool-Teamwork", target="_blank")
+						| Ссылка на github
+					a.portfolioPopup__link(href="http://vp3.demo-me.ru/", target="_blank")
+						| Ссылка на сам проект
+					.portfolioPopup__pic
+						img.portfolioPopup__pic-img(src="img/portfolio/watermark.jpg", alt="Изображение проекта")
+
+			.portfolioItem__popup(data-number="3")
+				.portfolioPopup
+					header.portfolioPopup__header
+						h3.portfolioPopup__header-name
+							| Сайт про Благоустройство территории
+						a.portfolioPopup__header-close.b-close
+							| x
+					p.portfolioPopup__descr
+						| Мой первый серьёзный заказ. В итоговой реализации (сейчас проект ещё в разработке) будет интернет-магазин без корзины, в силу специфики товара. Основной опыт, полученный в течение его выполнения - общение с заказчиком. Обработка его пожеланий, отработка навыка отстаивания своего мнения, практика поиска решения для необычной задачи.
+					a.portfolioPopup__link(href="http://9004010.ru", target="_blank")
+						| Ссылка на сайт
+					.portfolioPopup__pic
+						img.portfolioPopup__pic-img(src="img/portfolio/9004010.jpg", alt="Ограждения и благоустройство")
+
+			.portfolioItem__popup(data-number="4")
+				.portfolioPopup
+					header.portfolioPopup__header
+						h3.portfolioPopup__header-name
+							| Создание Landing-page на CMS Wordpress
+						a.portfolioPopup__header-close.b-close
+							| x
+					p.portfolioPopup__descr
+						| Практика работы с CMS. Ничего сложного в этом нет, но нужно было научиться разбираться в их интерфейсе и находить то, что тебе нужно изменить (что далеко не всегда тривиально). Большинство из них были перенесены на другие домены или закрыты, так как делались для разовых мероприятий. Даю ссылку на проект, на котором осталось хоть что-то.
+					a.portfolioPopup__link(href="http://master.frankpucelik.ru", target="_blank")
+						| Ссылка на проект
+					.portfolioPopup__pic
+						img.portfolioPopup__pic-img(src="img/portfolio/master.jpg", alt="Wordpress landing")
+
+			.portfolioItem__popup(data-number="5")
+				.portfolioPopup
+					header.portfolioPopup__header
+						h3.portfolioPopup__header-name
+							| Вёрстка страницы интернет-магазина
+						a.portfolioPopup__header-close.b-close
+							| x
+					p.portfolioPopup__descr
+						| Выполнена в рамках курса Loftschool. Отрабатывались навыки JADE, SCSS, а также создания интерактивных элементов, задействующих JS (ползунки с ограничениями цен, изменение отображения товаров). Должно работать на IE9.
+					a.portfolioPopup__link(href="https://github.com/DoYouLikeOrigami/sborka", target="_blank")
+						| Ссылка на github
+					.portfolioPopup__pic
+						img.portfolioPopup__pic-img(src="img/portfolio/shop.jpg", alt="Страница интернет-магазина")
+			
+			section.infoSection.contactsSection#contacts
+				header.infoSection__header
+					h2.infoSection__header-name.animated.fadeInUp
+						| Мои контакты
+					wrapper.infoSection__header-wrapper
+						span.infoSection__header-descr.animated.fadeInUp
+							| Давайте пообщаемся!
+
+				wrapper.infoSection__container
+					wrapper.contactsSection__flexbox.flexboxBlock
+
+						article.contactsSection__flexbox-block.contactInfo
+							span.contactInfo__icon.fa.fa-compass
+							h3.contactInfo__header
+								| Моё местоположение
+							p.contactInfo__text
+								| Санкт-Петербург, МСГ, корпус 3, комната 87
+
+						article.contactsSection__flexbox-block.contactInfo
+							span.contactInfo__icon.fa.fa-mobile
+							h3.contactInfo__header
+								| Мой номер телефона 
+							a.contactInfo__text(href="tel:+79117485349")
+								| +7(911)748-53-49
+
+						article.contactsSection__flexbox-block.contactInfo
+							span.contactInfo__icon.fa.fa-vk
+							h3.contactInfo__header
+								| Я В Контакте
+							a.contactInfo__text(href="http://vk.com/origami_joke", target="_blank")
+								| Антон Немцев
+								
+			footer.mainFooter
+				wrapper.mainFooter__container.clearfix
+					.mainFooter__left
+						p.mainFooter__text
+							| &copy; 2016 Антон Немцев
+					.mainFooter__right
+						ul.mainFooter__socials
+							li.mainFooter__socials-item
+								a.mainFooter__socials-link(href="http://vk.com/origami_joke", target="_blank")
+									span.mainFooter__socials-icon.fa.fa-vk
+							li.mainFooter__socials-item
+								a.mainFooter__socials-link(href="https://www.linkedin.com/in/origamijoke", target="_blank")
+									span.mainFooter__socials-icon.fa.fa-linkedin
+							li.mainFooter__socials-item
+								a.mainFooter__socials-link(href="https://github.com/DoYouLikeOrigami", target="_blank")
+										span.mainFooter__socials-icon.fa.fa-github
+
+		script(src="bower/jquery/jquery.min.js")
+		script(src="bower/bPopup/jquery.bpopup.min.js")
+		script(src="bower/parallax.js/parallax.min.js")
+		script(src="bower/page-scroll-to-id/jquery.malihu.PageScroll2id.js")
+		script(src="js/main.js")
