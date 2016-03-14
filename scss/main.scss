@@ -20,7 +20,7 @@ body {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .mainWrapper {
@@ -194,6 +194,7 @@ h1, h2, h3 {
 	&__list {
 		margin-top: 180px;
 		text-align: center;
+		display: block;
 	}
 
 	&__item:nth-child(1) .mainMenu__link {
@@ -439,8 +440,8 @@ h1, h2, h3 {
 
 			&-item {
 				display: inline-block;
-				font-size: 24px;
-				margin-left: 15px;
+				font-size: 30px;
+				margin-left: 20px;
 
 				&:first-of-type {
 					margin-left: 0;
@@ -557,6 +558,8 @@ h1, h2, h3 {
 				color: $akcentColor;
 				font-size: 20px;
 				margin-right: 5px;
+				line-height: 20px;
+				vertical-align: middle;
 			}
 
 			&__name,
@@ -757,7 +760,7 @@ h1, h2, h3 {
 		
 		&__icon {
 			font-size: 40px;
-			line-height: 40px;
+			line-height: 36px;
 			color: $akcentColor;
 		}
 
@@ -765,6 +768,8 @@ h1, h2, h3 {
 			display: inline-block;
 			margin: 0;
 			margin-left: 10px;
+			line-height: 40px;
+			vertical-align: top;
 		}
 
 		&__text {
@@ -815,7 +820,7 @@ h1, h2, h3 {
 	&__socials {
 		margin: 0;
 		padding: 0;
-		padding-top: 14px;
+		padding-top: 7px;
 
 		&-link {
 			color: $akcentColor;
@@ -825,7 +830,7 @@ h1, h2, h3 {
 			display: inline-block;
 			list-style: none;
 			color: $akcentColor;
-			font-size: 20px;
+			font-size: 25px;
 			margin-left: 20px;
 		}
 	}
